@@ -1,0 +1,85 @@
+{
+  "name": "pattern-library-skeleton",
+  "version": "1.0.0",
+  "description": "A awesome pattern library for your products and experiences!",
+  "license": "ISC",
+  "author": "Juan Carlos Ruiz <klaufel@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/klaufel/pattern-library-skeleton.git"
+  },
+  "scripts": {
+    "tokens": "npm run tokens:api && npm run tokens:build",
+    "tokens:api": "bin/figma-tokens",
+    "tokens:build": "style-dictionary build",
+    "storybook": "start-storybook -p 9001",
+    "storybook:build": "build-storybook -o storybook -c .storybook",
+    "prettier:check": "prettier \"./**/*.{js,mdx}\" --check",
+    "prettier:write": "prettier \"./**/*.{js,mdx}\" --write",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:update": "jest --updateSnapshot",
+    "test:coverage": "jest --coverage",
+    "test:coverage-web": "npm run test:coverage && open coverage/lcov-report/index.html",
+    "lint": "sui-lint js"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run prettier:write",
+      "pre-push": "npm run test"
+    }
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ],
+    "plugins": [
+      [
+        "babel-plugin-styled-components",
+        {
+          "displayName": false
+        }
+      ],
+      "react-docgen"
+    ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.5",
+    "@babel/preset-react": "^7.9.4",
+    "@s-ui/lint": "^3.14.0",
+    "@storybook/addon-actions": "^5.3.18",
+    "@storybook/addon-docs": "^5.3.18",
+    "@storybook/addon-knobs": "^5.3.18",
+    "@storybook/react": "^5.3.18",
+    "@testing-library/react": "^10.0.2",
+    "babel-jest": "^25.3.0",
+    "babel-loader": "^8.1.0",
+    "babel-plugin-react-docgen": "^4.1.0",
+    "babel-plugin-styled-components": "^1.10.7",
+    "babel-polyfill": "^6.26.0",
+    "esm": "^3.2.25",
+    "file-system": "^2.2.2",
+    "husky": "^4.2.5",
+    "jest": "^25.3.0",
+    "jest-styled-components": "^7.0.2",
+    "node-fetch": "^2.6.0",
+    "style-dictionary": "^2.8.3"
+  },
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "prop-types": "^15.7.2",
+    "styled-components": "^5.1.0"
+  },
+  "eslintConfig": {
+    "extends": [
+      "./node_modules/@s-ui/lint/eslintrc.js"
+    ]
+  },
+  "prettier": "./node_modules/@s-ui/lint/.prettierrc.js",
+  "stylelint": {
+    "extends": "./node_modules/@s-ui/lint/stylelint.config.js"
+  }
+}

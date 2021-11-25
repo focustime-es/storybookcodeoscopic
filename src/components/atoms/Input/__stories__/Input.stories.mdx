@@ -1,0 +1,42 @@
+import {Meta, Props, Story, Preview} from '@storybook/addon-docs/blocks'
+import {text, boolean} from '@storybook/addon-knobs'
+import Input from '..'
+
+export const knobsProps = () => ({
+  placeholder: text('text', 'Escribe aquí...'),
+  disabled: boolean('disabled', false)
+})
+
+<Meta title="Atoms/Input" component={Input} />
+
+# Input
+
+The `Input` usually act as the main call to action for the users, focusing their attention on what they need to do at each moment.
+
+<Preview>
+  <Story name="Default">
+    <Input placeholder="Escribe aquí..."></Input>
+  </Story> 
+</Preview>
+
+## Props
+
+<Props of={Input} />
+
+## Stories
+
+### Disabled
+
+<Preview>
+  <Story name="Default disabled">
+    <Input disabled placeholder="Escribe aquí..."></Input>
+  </Story>
+</Preview>
+
+## Knobs
+
+<Preview>
+  <Story name="Knobs">
+    <Input {...knobsProps()} />
+  </Story>
+</Preview>

@@ -1,0 +1,44 @@
+import {Meta, Props, Story, Preview} from '@storybook/addon-docs/blocks'
+import {text, boolean} from '@storybook/addon-knobs'
+import Card from '..'
+import Button from '../../../atoms/Button'
+import Input from '../../../atoms/Input'
+
+export const knobsProps = () => ({
+  title: text('text', 'Acceso'),
+  children: text(
+    'children',
+    'Introduce tus credenciales para acceder a la suite Codeoscopic'
+  )
+})
+
+<Meta title="Molecules/Card" component={Card} />
+
+# Card
+
+The `Card` usually act as the main call to action for the users, focusing their attention on what they need to do at each moment.
+
+<Preview>
+  <Story name="Default">
+    <Card title="Acceso">
+      <p>
+        Introduce tus credenciales para acceder a la suite Codeoscopic
+      </p>    
+      <Input placeholder='Usuario'></Input>
+      <Input placeholder='Contraseña'></Input>
+      <Button>Acceder</Button>
+    </Card>
+  </Story>
+</Preview>
+
+## Props
+
+<Props of={Card} />
+
+## Knobs
+
+<Preview>
+  <Story name="Knobs">
+    <Card {...knobsProps()} />
+  </Story>
+</Preview>

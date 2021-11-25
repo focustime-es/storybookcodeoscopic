@@ -1,0 +1,56 @@
+import {Meta, Props, Story, Preview} from '@storybook/addon-docs/blocks'
+
+<Meta title="Overview/Intro" />
+
+# 👋 Welcome to Codeoscopic Storybook
+
+# Design tokens
+
+- [🍪 Breakpoints](/?path=/docs/overview-design-tokens-🍪-breakpoints--page)
+- [🎨 Colors](/?path=/docs/overview-design-tokens-🎨-colors--page)
+- [🌀 Radius](/?path=/docs/overview-design-tokens-🌀-radius--page)
+- [🌚 Shadows](/?path=/docs/overview-design-tokens-🌚-shadows--page)
+- [📐 Spacing](/?path=/docs/overview-design-tokens-📐-spacing--page)
+- [🖋 Typography](/?path=/docs/overview-design-tokens-🖋typography--page)
+
+# Let´s start!
+
+## Duplicate figma design tokens file
+
+**Figma file:** [https://www.figma.com/file/IGr2xoqcZX91CU7CDr4ZsI](https://www.figma.com/file/IGr2xoqcZX91CU7CDr4ZsI)
+
+![Duplicate figma file](https://klaufel.com/tokens/img/duplicate-file.png)
+
+## Get your figma file id
+
+![Copy figma id](https://klaufel.com/tokens/img/copy-figma-id.png)
+
+## Get your figma API key
+
+https://www.figma.com/developers/api
+
+![Get access token](https://klaufel.com/tokens/img/get-access-token.png)
+
+You can clone our Git repository:
+`$ git clone git@github.com:klaufel/pattern-library-skeleton.git`
+
+Install dependencies
+`$ npm install`
+
+And then, launch storybook
+`$ npm run storybook`
+
+Modify config with your figma API key and figma id
+`$ figma.config.json`
+
+![Create config](https://klaufel.com/tokens/img/create-config.png)
+
+Generate design tokens as variables
+
+`$ npm run tokens`
+
+`$ npm run tokens:api` Generate tokens data base (only figma)
+
+`$ npm run tokens:build` Generate all plattforms tokens vars with a figma data base
+
+😊 Enjoy!
