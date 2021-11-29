@@ -1,6 +1,7 @@
 import React from 'react'
 import {GlobalStyle, Wrapper} from './Codeoscopic.styles'
 import Button from '../../atoms/Button'
+import Card from '../../molecules/Card'
 
 const Codeoscopic = () => (
   <>
@@ -40,11 +41,7 @@ const Codeoscopic = () => (
               
             </div>
           </div>
-          <div className="explanation">
-              <input type="text" placeholder="usuario" />
-              <input type="text" placeholder="contraseña" />
-              <Button>Default button</Button>
-          </div>
+         <Card></Card>
          
         </div>
       </section>
