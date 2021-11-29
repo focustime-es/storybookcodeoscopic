@@ -24,15 +24,15 @@ const Codeoscopic = () => (
                 height="auto"
               />
                <img
-                  src="http://51.75.250.100:81/v2/logo/logoOscuro.png?s=51.75.250.100"
-                  alt="uiFromMars"
+                  src="https://sp-ao.shortpixel.ai/client/q_lqip,ret_wait,w_200/https://www.mediadoresdesegurosdemadrid.com/wp-content/uploads/2014/09/Logo-Te-sis.png"
+                  alt="Acceder a Te-Sis"
                   loading="lazy"
                   width="100"
                   height="auto"
                 />
                 <img
                   src="https://versusdata.com/wp-content/themes/versus_2021/public/images/header/logo-versus.svg"
-                  alt="Holaluz"
+                  alt="Acceder a Versus"
                   loading="lazy"
                   width="100"
                   height="auto"
