@@ -2,6 +2,7 @@ import React from 'react'
 import {GlobalStyle, Wrapper} from './Codeoscopic.styles'
 import Button from '../../atoms/Button'
 import Card from '../../molecules/Card'
+import Input from  '../../atoms/Input'
 
 const Codeoscopic = () => (
   <>
@@ -41,6 +42,7 @@ const Codeoscopic = () => (
               
             </div>
           </div>
+          <div className="credits">
           <Card title="Acceso">
             <p>
               Introduce tus credenciales para acceder a la suite Codeoscopic
@@ -49,7 +51,7 @@ const Codeoscopic = () => (
             <Input placeholder='Contraseña'></Input>
             <Button>Acceder</Button>
           </Card>
-         
+         </div>
         </div>
       </section>
 
