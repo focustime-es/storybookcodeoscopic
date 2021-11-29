@@ -52,6 +52,7 @@ const Codeoscopic = () => (
           </Card>
          </div>
         </div>
+        </div>
       </section>
 
       <section className="schedule">
