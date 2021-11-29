@@ -41,7 +41,6 @@ const Codeoscopic = () => (
                 />
               
             </div>
-          </div>
           <div className="credits">
           <Card title="Acceso">
             <p>
