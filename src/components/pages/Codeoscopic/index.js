@@ -41,7 +41,14 @@ const Codeoscopic = () => (
               
             </div>
           </div>
-         <Card></Card>
+          <Card title="Acceso">
+            <p>
+              Introduce tus credenciales para acceder a la suite Codeoscopic
+            </p>    
+            <Input placeholder='Usuario'></Input>
+            <Input placeholder='Contraseña'></Input>
+            <Button>Acceder</Button>
+          </Card>
          
         </div>
       </section>
