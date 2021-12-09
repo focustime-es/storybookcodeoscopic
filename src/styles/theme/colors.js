@@ -1,10 +1,11 @@
-import tokens from '../../../tokens/json/color'
+import tokens from '../../../tokens/parent/json/color'
+import tokensProject from '../../../tokens/project/json/color'
 
 const colors = {
   primary: {
-    light: tokens.color.primaryLight.value,
-    main: tokens.color.primaryMain.value,
-    dark: tokens.color.primaryDark.value
+    light: tokensProject.color.primaryLight.value,
+    main: tokensProject.color.primaryMain.value,
+    dark: tokensProject.color.primaryDark.value
   },
   neutral: {
     percent00: tokens.color.neutral00.value,
