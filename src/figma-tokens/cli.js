@@ -11,8 +11,9 @@ export function cli() {
     }
     fs.readFile(path, 'utf8', (err, data) => {
       if (err) throw err
-      const {FIGMA_APIKEY, FIGMA_ID} = JSON.parse(data)
-      const FIGMA_OUTDIR = 'tokens/json'
+      const {FIGMA_APIKEY, FIGMA_ID, FIGMA_ID_PROJECT} = JSON.parse(data)
+      const FIGMA_OUTDIR = 'tokens/parent/json'
+      const FIGMA_OUTDIR_PROJECT = 'tokens/project/json'
       if (!FIGMA_APIKEY) {
         throw new Error('\x1b[31m\n\n❌ No Figma API key found!\n\n')
       } else if (!FIGMA_ID) {
@@ -25,8 +26,19 @@ export function cli() {
           if (err) {
             throw new Error(`\x1b[31m\n\n❌ ${err}!\n\n`)
           }
-          genTokens(FIGMA_APIKEY, FIGMA_ID, FIGMA_OUTDIR)
+
+          if (!FIGMA_OUTDIR_PROJECT)
+          // eslint-disable-next-line no-console
+          console.warn('⚠️ No outdir found, default outdir is `./tokens.json`')
+        fs.mkdir(FIGMA_OUTDIR_PROJECT, null, err => {
+          if (err) {
+            throw new Error(`\x1b[31m\n\n❌ ${err}!\n\n`)
+          }
+          genTokens(FIGMA_APIKEY, FIGMA_ID, FIGMA_OUTDIR, true)
+          genTokens(FIGMA_APIKEY, FIGMA_ID_PROJECT, FIGMA_OUTDIR_PROJECT, false)
         })
+      })
+      
       }
     })
   })

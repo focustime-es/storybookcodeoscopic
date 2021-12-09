@@ -33,9 +33,9 @@ const genFile = (name, tokens, outDir) =>
     }
   )
 
-const genTokens = (apikey, id, outDir) => {
+const genTokens = (apikey, id, outDir, isParent) => {
   // eslint-disable-next-line no-console
-  console.log('\x1b[40m 👟 🚀  Connecting from mars... \x1b[0m\n')
+  console.log('\x1b[40m Connecting to Codeoscopic Figma libraries... \x1b[0m\n')
   const FETCH_URL = `https://api.figma.com/v1/files/${id}`
   const FETCH_DATA = {
     method: 'GET',
@@ -56,17 +56,19 @@ const genTokens = (apikey, id, outDir) => {
       .then(styles => {
         if (styles.status !== 403 && styles.status !== 404) {
           const figmaTree = styles.document.children[0].children
-
           genFile('color', getColors('Colors', figmaTree), outDir)
-          genFile('spacing', getSpacing('Spacings', figmaTree), outDir)
-          genFile('typography', getTypography('Typography', figmaTree), outDir)
-          genFile('shadow', getShadows('Shadows', figmaTree), outDir)
-          genFile('radius', getRadius('Radius', figmaTree), outDir)
-          genFile(
-            'breakpoint',
-            getBreakpoints('Breakpoints', figmaTree),
-            outDir
-          )
+          if(isParent){
+            genFile('spacing', getSpacing('Spacings', figmaTree), outDir)
+            genFile('typography', getTypography('Typography', figmaTree), outDir)
+            genFile('shadow', getShadows('Shadows', figmaTree), outDir)
+            genFile('radius', getRadius('Radius', figmaTree), outDir)
+            genFile(
+              'breakpoint',
+              getBreakpoints('Breakpoints', figmaTree),
+              outDir
+            )
+          }
+          
         }
       })
       .catch(err => {
