@@ -1,11 +1,17 @@
 import {Meta, Props, Story, Preview} from '@storybook/addon-docs/blocks'
-import {text, boolean} from '@storybook/addon-knobs'
+import {text, boolean, select} from '@storybook/addon-knobs'
 import Button from '..'
 
 export const knobsProps = () => ({
   children: text('text', 'Default button'),
+  size: select('size', {
+  Large: 'lg',
+  Medium: 'md',
+  Small: 'sm'
+}, 'lg'),
   secondary: boolean('secondary', false),
-  ghost: boolean('ghost', false),
+  link: boolean('link', false),
+  dangerous: boolean('dangerous', false),
   disabled: boolean('disabled', false)
 })
 
@@ -17,13 +23,19 @@ The `Button` usually act as the main call to action for the users, focusing thei
 
 <Preview>
   <Story name="Default">
-    <Button>Default button</Button>
+   <div class="line"><Button>Default large</Button> <Button disabled>Default large disabled</Button></div>
+   <div class="line"><Button size="md">Default medium</Button> <Button disabled size="md">Default medium disabled</Button></div>
+   <div class="line"><Button size="sm">Default small</Button> <Button disabled size="sm">Default small disabled</Button></div>
   </Story>
   <Story name="Secondary">
-    <Button secondary>Secondary button</Button>
+  <div class="line"><Button secondary>Default large</Button> <Button secondary disabled>Default large disabled</Button></div>
+   <div class="line"><Button secondary size="md">Default medium</Button> <Button secondary disabled size="md">Default medium disabled</Button></div>
+   <div class="line"><Button secondary size="sm">Default small</Button> <Button secondary disabled size="sm">Default small disabled</Button></div>
   </Story>
-  <Story name="Ghost">
-    <Button ghost>Ghost button</Button>
+  <Story name="Link">
+    <div class="line"><Button link>Default large</Button> <Button link disabled>Default large disabled</Button></div>
+   <div class="line"><Button link size="md">Default medium</Button> <Button link disabled size="md">Default medium disabled</Button></div>
+   <div class="line"><Button link size="sm">Default small</Button> <Button link disabled size="sm">Default small disabled</Button></div>
   </Story>
 </Preview>
 
@@ -33,22 +45,25 @@ The `Button` usually act as the main call to action for the users, focusing thei
 
 ## Stories
 
-### Disabled
+### Dangerous
 
 <Preview>
-  <Story name="Default disabled">
-    <Button disabled>Default button</Button>
+  <Story name="Dangerous">
+   <div class="line"><Button dangerous>Default large</Button> <Button dangerous disabled>Default large disabled</Button></div>
+   <div class="line"><Button dangerous size="md">Default medium</Button> <Button dangerous disabled size="md">Default medium disabled</Button></div>
+   <div class="line"><Button dangerous size="sm">Default small</Button> <Button dangerous disabled size="sm">Default small disabled</Button></div>
   </Story>
-  <Story name="Secondary disabled">
-    <Button secondary disabled>
-      Secondary button
-    </Button>
+  <Story name="Dangerous Secondary">
+   <div class="line"><Button secondary dangerous>Default large</Button> <Button secondary dangerous disabled>Default large disabled</Button></div>
+   <div class="line"><Button secondary dangerous size="md">Default medium</Button> <Button secondary dangerous disabled size="md">Default medium disabled</Button></div>
+   <div class="line"><Button secondary dangerous size="sm">Default small</Button> <Button secondary dangerous disabled size="sm">Default small disabled</Button></div>
   </Story>
-  <Story name="Ghost disabled">
-    <Button ghost disabled>
-      Ghost button
-    </Button>
+  <Story name="Dangerous Link">
+   <div class="line"><Button link dangerous>Default large</Button> <Button link dangerous disabled>Default large disabled</Button></div>
+   <div class="line"><Button link dangerous size="md">Default medium</Button> <Button link dangerous disabled size="md">Default medium disabled</Button></div>
+   <div class="line"><Button link dangerous size="sm">Default small</Button> <Button link dangerous disabled size="sm">Default small disabled</Button></div>
   </Story>
+  
 </Preview>
 
 ## Knobs

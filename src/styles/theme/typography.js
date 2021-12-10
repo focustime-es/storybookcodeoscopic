@@ -1,4 +1,4 @@
-import tokens from '../../../tokens/json/typography'
+import tokens from '../../../tokens/parent/json/typography'
 
 const typography = {
   global: {
@@ -25,6 +25,21 @@ const typography = {
     normal: {
       fontSize: tokens.typography.bodyNormal.fontSize.value,
       lineHeight: tokens.typography.bodyNormal.lineHeight.value
+    },
+    buttonlg: {
+      fontSize: tokens.typography.bodyButtonlg.fontSize.value,
+      lineHeight: tokens.typography.bodyButtonlg.lineHeight.value,
+      fontWeight: tokens.typography.bodyButtonlg.fontWeight.value
+    },
+    buttonmd: {
+      fontSize: tokens.typography.bodyButtonmd.fontSize.value,
+      lineHeight: tokens.typography.bodyButtonmd.lineHeight.value,
+      fontWeight: tokens.typography.bodyButtonmd.fontWeight.value
+    },
+    buttonsm: {
+      fontSize: tokens.typography.bodyButtonsm.fontSize.value,
+      lineHeight: tokens.typography.bodyButtonsm.lineHeight.value,
+      fontWeight: tokens.typography.bodyButtonsm.fontWeight.value
     }
   }
 }

@@ -1,13 +1,13 @@
 {
   "color": {
     "alertWarning": {
-      "value": "#ffc65e"
+      "value": "#ffa90d"
     },
     "alertError": {
-      "value": "#ff686c"
+      "value": "#e5363a"
     },
     "alertSuccess": {
-      "value": "#34f077"
+      "value": "#109c42"
     },
     "neutral00": {
       "value": "#ffffff"
@@ -25,13 +25,13 @@
       "value": "#333333"
     },
     "primaryDark": {
-      "value": "#7e188f"
+      "value": "#1a5b96"
     },
     "primaryMain": {
-      "value": "#c63cdc"
+      "value": "#399ffd"
     },
     "primaryLight": {
-      "value": "#f590eb"
+      "value": "#a8d5ff"
     }
   }
 }

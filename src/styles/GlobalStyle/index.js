@@ -170,7 +170,13 @@ const GlobalStyle = createGlobalStyle`
   small {
     font-size: 80%;
   }
-
+  .line{
+    display: flex;
+    margin-bottom: 10px;
+  }
+  .line :first-child{
+    margin-right: 10px;
+  }
   /**
   * Prevent 'sub' and 'sup' elements from affecting the line height in
   * all browsers.
@@ -496,6 +502,7 @@ const GlobalStyle = createGlobalStyle`
       color: ${props => props.theme.colors.primary.dark};
     }
   }
+  
 `
 
 export default GlobalStyle

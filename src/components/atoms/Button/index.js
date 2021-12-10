@@ -2,12 +2,14 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './Button.styles'
 
-const Button = ({disabled, secondary, ghost, onClick, children}) => (
+const Button = ({disabled, secondary, link, onClick, dangerous, children, size}) => (
   <button
     css={styles}
     disabled={disabled}
+    dangerous={dangerous}
     secondary={secondary}
-    ghost={ghost}
+    size={size}
+    link={link}
     onClick={onClick && onClick()}
   >
     {children}
@@ -21,11 +23,13 @@ Button.propTypes = {
   children: PropTypes.node.isRequired,
   /** This Boolean attribute prevents the user from interacting with the button */
   disabled: PropTypes.bool,
+  /** This Boolean attribute prevents the user from interacting with the button */
+  dangerous: PropTypes.bool,
   /** This Boolean attribute to display secondary button variation */
   secondary: PropTypes.bool,
   /** This Boolean attribute to display ghost button variation */
-  ghost: PropTypes.bool,
-  /** Click event */
+  link: PropTypes.bool,
+    /** Click event */
   onClick: PropTypes.func
 }
 
